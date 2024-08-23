@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- details -->
+    <details>
+      <summary>click to see more</summary>
+      <p>This is some additional information that is hidden by default</p>
+    </details>
+
+    <!-- mark tag -->
+    <p>Here are some text with a <mark>Highlighted</mark>word</p>
+
+    <!-- abbrevation tag-->
+    <p>
+      I work for the
+      <abbr title="National aerounautics and space administration">NASA</abbr>
+    </p>
+
+    <!-- cite -->
+    <p>My favorite movie is <cite>Bigil</cite></p>
+
+    <!-- Time tag -->
+
+    <p>
+      The event starts at
+      <time datetime="2024-08-22T15:00">7:00 Pm on August 22,2024</time>
+    </p>
+
+    <!-- Data list -->
+
+    <label for="browser">Choose your browser from the list:</label>
+    <input type="text" list="browsers" id="browser" name="browser" />
+    <datalist id="browsers">
+      <option value="chrome"></option>
+      <option value="safari"></option>
+      <option value="firefox"></option>
+      <option value="edge"></option>
+    </datalist>
+
+    <!-- progress tag -->
+
+    <p>Downloading progress:<progress value="70" max="100"></progress>70%</p>
+
+    <!-- meter -->
+    <p>Disc usage:<meter value="0.6"></meter>60%</p>
+
+    <!-- figure -->
+    <figure>
+      <img
+        src="./iamges/pexels-efrem-efre-2786187-13319768.jpg"
+        alt="A man"
+        width="300px"
+        height="auto"
+      />
+      <figcaption>A man</figcaption>
+    </figure>
+
+    <!-- bdi -->
+
+    <p>user<bdi>comment vas-tu ?</bdi>:90 points</p>
+
+    <!-- dialog -->
+    <button id="openDialog">open Dialog</button>
+    <dialog id="dialogBox">
+      <p>This is a dialog box</p>
+      <button id="closeDialog">close</button>
+    </dialog>
+
+    <!-- Template -->
+    <template id="template"
+      ><h2>This is a template</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+        cupiditate sed natus nisi aliquid recusandae asperiores deserunt laborum
+        aspernatur dignissimos nam consectetur impedit repudiandae
+        exercitationem, tempora corrupti praesentium, voluptatem autem
+        necessitatibus. Sequi accusamus adipisci molestias eius, hic vel odio
+        cumque animi delectus odit labore blanditiis dicta impedit, eaque
+        recusandae eveniet?
+      </p></template
+    >
+    <div id="wrapper"></div>
+    <button id="showTemplate">show template</button>
+
+    <!-- picture -->
+    <picture>
+      <source
+        media="(min-width:650px)"
+        srcset="./iamges/pexels-efrem-efre-2786187-13319768.jpg"
+      />
+
+      <source
+        media="(min-width:650px)"
+        srcset="./iamges/pexels-efrem-efre-2786187-13319768.jpg"
+      />
+      <img
+        src="./iamges/pexels-efrem-efre-2786187-13319768.jpg"
+        width="500px"
+        height="500px"
+      />
+    </picture>
+
+    <!-- audio and video -->
+
+    <audio controls>
+      <source src="./audio/kick.mp3" type="audio/mp3" />
+      your browser support mp3
+    </audio>
+
+    <video controls>
+      <source src="./video/video.mp4" type="video/mp4" />
+      your browser support video
+    </video>
+
+    <!-- canvas -->
+
+    <canvas
+      id="myCanvas"
+      width="200"
+      height="100"
+      style="border: 1px solid blue; background-color: aqua"
+    ></canvas>
+
+    <!-- no script -->
+
+    <noscript>
+      <p>
+        This website requires javascript to function properly.please enable
+        javascript in your browser
+      </p>
+    </noscript>
+
+    <!-- kbd -->
+    <p>press <kbd>ctrl</kbd>+<kbd>c</kbd>to copy text.</p>
+
+    <p>This programs output is:<samp>Error:file not found</samp></p>
+
+    <!-- code -->
+    <p>use the get <code>getElementById</code>method to access an element</p>
+
+    <!-- pre -->
+    <pre>
+        function greet(){
+        console.log("Hello  , world");
+     }
+     </pre
+    >
+
+    <script>
+      const dialog = document.getElementById("dialogBox");
+      const openButton = document.getElementById("openDialog");
+      const closeButton = document.getElementById("closeDialog");
+
+      openButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      closeButton.addEventListener("click", () => {
+        dialog.close();
+      });
+
+      const template = document.getElementById("template");
+      const wrapper = document.getElementById("wrapper");
+      const show = document.getElementById("showTemplate");
+
+      const clone = template.content.cloneNode(true);
+
+      show.addEventListener("click", () => {
+        wrapper.appendChild(clone);
+      });
+
+      const canvas = document.getElementById("myCanvas");
+      const context = canvas.getContext("2d");
+      context.fillstyle = "#FF0000";
+      context.fillRect(0, 0, 150, 75);
+    </script>
+  </body>
+</html>
